@@ -102,3 +102,49 @@ const 함수 = function(콜백함수의_매개변수) {
   console.log(`${콜백함수의_매개변수}번째`)
 }
 콜백테스트(함수)
+
+// 또는 아래 
+
+콜백테스트(함수 = function(콜백함수의_매개변수) {
+  console.log(`${콜백함수의_매개변수}번째`)
+})
+
+
+// 7. setTime 함수
+// (1) setTimeOut() 특정한 시간 후에 한번
+    // setTimeout(function(Handler){},ms)
+// (2) setInterval() 특정한 시간마다
+    // setInterval(function(Handler){},ms)
+
+setTimeout(function(){
+  console.log('setTimeOut 함수입니다')
+}, 1000)
+
+setInterval(function(){
+  console.log('setInterval 함수입니다')
+}, 1000)
+
+// clearTimeOut()
+// clearInterval()
+const a = setTimeout(function(){
+  console.log('setTimeOut 함수입니다')
+})
+
+console.log(a)
+
+clearInterval(a)
+
+
+// 8. 즉시호출 함수
+
+/* (1) 
+(function(){
+
+})() 
+*/
+
+/* (2)
+(() => {
+
+})()
+*/
