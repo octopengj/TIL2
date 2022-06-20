@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded',()=>{
+      const img = document.querySelector('img')
+      //값을 넣는 행위
+      // 표준에 없으면 setAttribute, getAttribute를 사용해야하고
+      // 표준에 있으면 단축속성으로 사용 가능하다.
+      //img.setAttribute('src', 'http://placekitten.com/200/200')
+      img.src = 'http://placekitten.com/200/200'
+      //값을 추출 행위
+      //console.log(img.getAttribute('src'))
+      console.log(img.src)
+    })
+  </script>
+</head>
+<body>
+  <img src="" alt="">
+</body>
+</html>
