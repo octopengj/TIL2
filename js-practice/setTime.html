@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+      const header = document.createElement('h2')
+      header.textContent = 'Hi'
+
+      const first  = document.querySelector('.first')
+      const second = document.querySelector('.second')
+      first.appendChild(header)
+      setTimeout(()=>{
+        second.appendChild(header)
+      }, 2000)
+    })
+  </script>
+</head>
+<body>
+  <div class="first">
+    <h1>첫번째</h1>
+  </div>
+  <hr>
+  <div class="second">
+    <h1>두번째</h1>
+  </div>
+</body>
+</html>
