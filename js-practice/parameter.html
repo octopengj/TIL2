@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    /*
+    function 메일보내기 ({발신인, 수신인, 내용}) {
+      console.log(`발신인: ${발신인}`)
+      console.log(`수신인: ${수신인}`)
+      console.log(내용)
+    }
+    
+    메일보내기({
+      발신인: '가', 
+      수신인: '나', 
+      내용: '보내줘'
+    })
+    */
+
+
+    // 기본값 지정
+    /*
+    function 메일보내기 ({
+      발신인 = '기본값', 
+      수신인 = '기본값', 
+      내용 = '기본값'
+    }) {
+      console.log(`발신인: ${발신인}`)
+      console.log(`수신인: ${수신인}`)
+      console.log(내용)
+    }
+    
+    메일보내기({
+      발신인: '가', 
+      수신인: '나', 
+      내용: '보내줘'
+    })
+    */
+
+
+    // 오타가 있을 경우
+    /*
+    function 메일보내기 ({
+      발신인 = '기본값', 
+      수신인 = '기본값', 
+      내용 = '기본값'
+    }) {
+      console.log(`발신인: ${발신인}`)
+      console.log(`수신인: ${수신인}`)
+      console.log(내용)
+    }
+    
+    메일보내기({
+      발신인: '가', 
+      수신인: '나', 
+      내욤: '보내줘' //내욤
+    })
+    */
+    // 오타가 있으니 내용의 기본값이 들어가게 된다.
+
+
+    // throw 사용
+    function isRequired (이름) { throw `${이름} 매개변수에 문제가 있습니다.`}
+    function 메일보내기 ({
+      발신인 = isRequired('발신인'), 
+      수신인 = isRequired('수신인'), 
+      내용 = isRequired('내용')
+    }) {
+      console.log(`발신인: ${발신인}`)
+      console.log(`수신인: ${수신인}`)
+      console.log(내용)
+    }
+    
+    메일보내기({
+      발신인: '가', 
+      수신인: '나', 
+      내욤: '보내줘' //내욤
+    })
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

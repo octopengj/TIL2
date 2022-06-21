@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const h1 = document.querySelector('h1')
+
+      //기본적인 예외 처리
+      /*
+      if(h1 === null) {
+        console.log('오류발생')
+      } else {
+        h1.textContent = '변경'
+      }
+      */
+
+
+      //try catch
+      try {
+        //예외가 발생할 가능성이 있는 코드
+        h1.textContent = '변경'
+      } catch (error) {
+        // 예외가 발생했을 때 실행할 코드
+        // error부분에는 식별자를 입력해서 예외객체를 받아온다.
+        console.log('오류발생')
+      } finally {
+        // 무조건적으로 실행되는 코드
+      }
+
+    })
+  </script>
+</head>
+<body>
+
+</body>
+</html>
