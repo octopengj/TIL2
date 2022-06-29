@@ -1,0 +1,9 @@
+@import "./sub", "./sub2";
+
+$color: blue;
+
+.container {
+  h1 {
+    color: $color;
+  }
+}
