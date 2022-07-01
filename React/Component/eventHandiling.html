@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    console.log(React);
+    console.log(ReactDOM);
+
+    // //function
+    // function Component(){
+    //   return (
+    //     <div>
+    //       <button 
+    //         onClick={() => {
+    //           console.log('clicked');
+    //         }}
+    //       >
+    //       클릭
+    //       </button>
+    //     </div>
+    //   );
+    // }
+
+    // class
+    class Component extends React.Component {
+      state = {
+        count: 0
+      };
+      render() {
+        return (
+          <div>
+          <p>{this.state.count}</p>
+          <button onClick={this.click}>클릭</button>
+        </div>
+        );
+      }
+
+      click = () => {
+        console.log('clicked');
+        this.setState((state) => ({
+          ...state,
+          count: state.count + 1,
+        }));
+      };
+    }
+
+    ReactDOM.render(<Component />, document.querySelector('#root'));
+    </script>
+
+</body>
+</html>
