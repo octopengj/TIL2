@@ -59,3 +59,117 @@ npm i query-string
 - queryString으로 들어오는 방식
 
 
+
+
+
+## 4.3. Switch, NotFound
+
+- 여러 Route 중 순서대로 먼저 맞는 하나만 보여준다.
+
+- exact를 뺄 수 있는 로직을 만들 수 있다.
+
+- 가장 마지막에 어떤 path에도 맞지 않으면 보여지는 컴포넌트를 설정해서,
+  
+  Not Found 페이지를 만들 수 있다.
+
+
+
+### 4.4 JSX 링크로 라우팅 이동
+
+**Link 사용**
+
+```jsx
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
+import About from './pages/About';
+import Home from "./pages/Home";
+import Profile from './pages/Profile';
+import NotFound from './pages/NotFound';
+
+function App() {
+  return (
+    <BrowserRouter>
+    <Link to="/">Home</Link>
+    <Switch>
+      <Route path="/profile/:id" component={Profile} />
+      <Route path="/profile" component={Profile} />
+      <Route path="/about" component={About} />
+      <Route path="/" exact component={Home} />
+      <Route component={NotFound}/>
+    </Switch>
+
+    </BrowserRouter>
+  );
+}
+
+export default App;
+
+```
+
+
+
+**component/Links**
+
+App.js
+
+```js
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import About from './pages/About';
+import Home from "./pages/Home";
+import Profile from './pages/Profile';
+import NotFound from './pages/NotFound';
+import Links from './components/Links';
+
+function App() {
+  return (
+    <BrowserRouter>
+    <Links />
+    <Switch>
+      <Route path="/profile/:id" component={Profile} />
+      <Route path="/profile" component={Profile} />
+      <Route path="/about" component={About} />
+      <Route path="/" exact component={Home} />
+      <Route component={NotFound}/>
+    </Switch>
+
+    </BrowserRouter>
+  );
+}
+
+export default App;
+
+```
+
+components/ Links.jsx
+
+```jsx
+import {Link} from "react-router-dom";
+
+
+export default function Links() {
+  return (
+  <ul>
+    <li>
+      <Link to="/">Home</Link>
+    </li>
+    <li>
+      <Link to="/profile">Profile</Link>
+    </li>
+    <li>
+      <Link to="/profile/1">Profile/1</Link>
+    </li>
+    <li>
+      <Link to="/about">About</Link>
+    </li>
+    <li>
+      <Link to="/about?name=mark">About?name=mark</Link>
+    </li>
+  </ul>
+  );
+}
+```
+
+
+
+NavLink
+
+
