@@ -10,10 +10,6 @@ package.json에서 "react-router-dom": "^6.3.0"을
 
 "react-router-dom": "^5.3.0"으로 수정 후 진행함
 
-
-
-
-
 ### 4.1. Routing
 
 - SPA 라우팅 과정
@@ -28,8 +24,6 @@ package.json에서 "react-router-dom": "^6.3.0"을
   
   5. 새로운 경로에 맞는 컴포넌트를 보여준다.
 
-
-
 react router-dom
 
 ```git
@@ -43,5 +37,25 @@ npm i react-router-dom
 - 가장 대표적인 라우팅 패키지이다.
 
 
+
+### 4.2. Dynamic 라우팅
+
+URLSearchParams
+
+https://developer.mozilla.org/ko/docs/Web/API/URLSearchPar
+
+- path에 들어오는 id를 사용하는 방식
+
+
+
+
+
+query-string
+
+```git
+npm i query-string 
+```
+
+- queryString으로 들어오는 방식
 
 
