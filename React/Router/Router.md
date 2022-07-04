@@ -172,4 +172,86 @@ export default function Links() {
 
 NavLink
 
+NavLinks.jsx
+
+```jsx
+import {NavLink} from "react-router-dom";
+
+const activeStyle = {color: 'green'};
+
+export default function NavLinks() {
+  return (
+  <ul>
+    <li>
+      <NavLink to="/" exact activeStyle={activeStyle}>Home</NavLink>
+    </li>
+    <li>
+      <NavLink to="/profile" exact activeStyle={activeStyle}>Profile</NavLink>
+    </li>
+    <li>
+      <NavLink to="/profile/1" exact activeStyle={activeStyle}>Profile/1</NavLink>
+    </li>
+    <li>
+      <NavLink to="/about" exact activeStyle={activeStyle} 
+        isActive={(match, location) => {
+        console.log(location);
+        return match !== null && location.search === "";
+      }}>About</NavLink>
+    </li>
+    <li>
+      <NavLink to="/about?name=mark" exact activeStyle={activeStyle}
+        isActive={(match, location) => {
+          console.log(location);
+          return match !== null && location.search === "?name=mark";
+      }}>About?name=mark</NavLink>
+    </li>
+  </ul>
+  );
+}
+```
+
+
+
+
+
+### 4.5. JS로 라우팅 이동
+
+Login.jsx
+
+```jsx
+import LoginButton from "../components/LoginButton";
+
+export default function Login() {
+
+  return (
+  <div>
+    <h2>Login 페이지 입니다.</h2>
+    <LoginButton />
+  </div>
+  );
+}
+```
+
+LoginButton.jsx
+
+```jsx
+import {withRouter} from 'react-router-dom';
+
+export default withRouter(function LoginButton(props) {
+  console.log(props);
+  function login() {
+    setTimeout(() => {
+      props.history.push('/');
+    }, 1000);
+  }
+  return <button onClick={login}>로그인하기</button>
+})
+```
+
+App.js
+
+```js
+
+```
+
 
